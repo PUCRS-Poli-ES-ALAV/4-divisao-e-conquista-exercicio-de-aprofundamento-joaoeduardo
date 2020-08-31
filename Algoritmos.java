@@ -109,13 +109,13 @@ public class Algoritmos {
             return x * y;
         }else{
             long m = (n/2);
-            long a = (x/(m*m)); long b = x %(m*m);
-            long c = (y/m*m); long d = y %(m*m);
+            long a = (x/(m*m)); long b = x % (m*m);
+            long c = (y/m*m); long d = y % (m*m);
             long e = MULTIPLY(a, c, m);
             long f = MULTIPLY(b, d, m);
             long g = MULTIPLY(b, c, m);
             long h = MULTIPLY(a, d, m);
-            return ((2 * m) *(2 * m)) * e + (m*(g + h) * m*(g + h)) + f;
+            return ((2 * m) *(2 * m)) * e + (m*(g + h) * m *(g + h)) + f;
         }
     } 
 }

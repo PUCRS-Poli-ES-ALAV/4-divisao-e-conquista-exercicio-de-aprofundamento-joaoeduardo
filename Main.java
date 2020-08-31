@@ -56,4 +56,14 @@ public class Main {
         v = (double) (endTime - startTime) / 100;
         System.out.println("Tempo gasto questão 3: " + v);
     }
+
+    public static void exibirQuestao4(int[]vetor, int tamanho){
+        startTime =  System.currentTimeMillis();
+        
+        endTime = System.currentTimeMillis();
+        v = (double) (endTime - startTime) / 100;
+        System.out.println("Número de iterações: " + algoritmo.getIteracao2());
+        System.out.println("Tempo gasto questão 4: " + v);
+
+    }
 }
