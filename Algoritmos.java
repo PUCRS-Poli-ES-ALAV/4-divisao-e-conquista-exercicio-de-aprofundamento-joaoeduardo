@@ -5,6 +5,7 @@ public class Algoritmos {
     private int iteracao1;
     private int iteracao2;
     private int iteracao3;
+    private int iteracao4;
 
     public int getIteracao3() {
         return iteracao3;
@@ -16,6 +17,10 @@ public class Algoritmos {
 
     public int getIteracao1() {
         return iteracao1;
+    }
+
+    public int getIteracao4() {
+        return iteracao4;
     }
 
     public int[] gerarVetor(int tamanho) {
@@ -105,6 +110,7 @@ public class Algoritmos {
 
     // NÚMERO 4
     public long MULTIPLY(long x, long y,long n){
+        iteracao4++;
         if(n == 1){
             return x * y;
         }else{
