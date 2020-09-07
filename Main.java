@@ -11,16 +11,17 @@ public class Main {
         int tamanho = 1048576;
         int[] vetor = algoritmo.gerarVetor(tamanho);
 
-        // // Teste do vetor aleatório
-        // for (int i = 0; i < vetor.length; i++) {
-        // System.out.println(i + " - " + vetor[i]);
-        // }
-
         startTime = System.currentTimeMillis();
         
-        // exibirQuestao1(vetor, tamanho);
+        //exibirQuestao1(vetor, tamanho);
         //exibirQuestao2(vetor, tamanho);
-        exibirQuestao3(vetor, tamanho);
+        //exibirQuestao3(vetor, tamanho);
+        String a = "0001";
+        String b = "0010";
+        long c = a.length();
+
+        
+        exibirQuestao4(Long.parseLong(a), Long.parseLong(b), c);
 
         endTime = System.currentTimeMillis();
         double v = (double)(endTime - startTime) / 1000;
@@ -46,8 +47,8 @@ public class Main {
         System.out.println("Número de iteração: " + algoritmo.getIteracao3());
     }
 
-    // public static void exibirQuestao4(int[] vetor, int tamanho) {
-    //     System.out.println(algoritmo.MULTIPLY(x, y, n));
-    //     System.out.println("Número de iterações: " + algoritmo.getIteracao4());
-    // }
+    public static void exibirQuestao4(long x, long y, long n) {
+        System.out.println(algoritmo.multiply(x, y, n));
+        System.out.println("Número de iterações: " + algoritmo.getIteracao4());
+    }
 }

@@ -108,20 +108,44 @@ public class Algoritmos {
         return init;
     }
 
-    // NÚMERO 4
-    public long MULTIPLY(long x, long y,long n){
+    //NÚMERO 4
+
+    public long multiply(long x, long y, long n) {
         iteracao4++;
         if(n == 1){
             return x * y;
         }else{
-            long m = (n/2);
-            long a = (x/(m*m)); long b = x % (m*m);
-            long c = (y/m*m); long d = y % (m*m);
-            long e = MULTIPLY(a, c, m);
-            long f = MULTIPLY(b, d, m);
-            long g = MULTIPLY(b, c, m);
-            long h = MULTIPLY(a, d, m);
-            return ((2 * m) *(2 * m)) * e + (m*(g + h) * m *(g + h)) + f;
+            long m = (long)Math.ceil(n/2);
+
+            long a = (long)Math.floor(x/(potenciaN(2, m)));
+            long b = x%(potenciaN(2, m));
+
+            long c = (long)Math.floor(y/(potenciaN(2, m)));
+            long d = y%(potenciaN(2, m));
+
+            long e = multiply(a, c, m);
+            long f = multiply(b, d, m);
+            long g = multiply(b, c, m);
+            long h = multiply(a, d, m);
+            return ((potenciaN(2, 2 * m) * e) + (potenciaN(2, m)*(g + h)) + f);
         }
-    } 
+    }
+
+    public long potenciaN(long number, long potencia){
+        long res = 1;
+        long sq = number;
+        while(potencia > 0){
+            if(potencia % 2 == 1){
+                res *= sq; 
+            }
+            sq = sq * sq;
+            potencia /= 2;
+        }
+        return res;
+    }
+
+    public static long floor(long number) {
+        return (long)Math.floor(number);
+    }
+
 }
