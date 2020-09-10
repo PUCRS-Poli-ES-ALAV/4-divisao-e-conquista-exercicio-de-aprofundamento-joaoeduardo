@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
 
@@ -5,27 +6,84 @@ public class Main {
     static Algoritmos algoritmo = new Algoritmos();
 
     public static void main(String[] args) {
-
-        long startTime;
-        long endTime;
-        int tamanho = 1048576;
+        Scanner in = new Scanner(System.in);
+        boolean terminou = false;
+        
+        int tamanho = 64;
         int[] vetor = algoritmo.gerarVetor(tamanho);
+        while(!terminou){
+            System.out.println("\n------ Escolha uma das questões-------\n");
+            System.out.println("1 - Questão1");
+            System.out.println("2 - Questão2");
+            System.out.println("3 - Questão3");
+            System.out.println("4 - Questão4");
+            System.out.println("5 - Finalizar");
+            int opçao = in.nextInt();
+            System.out.println("\n");
+            
+            switch(opçao){
+                case 1:
+                    long startTime;
+                    long endTime;
 
-        startTime = System.currentTimeMillis();
+                    startTime = System.currentTimeMillis();
+                        
+                    exibirQuestao1(vetor, tamanho);
+
+                    endTime = System.currentTimeMillis();
+                    double d = (double)(endTime - startTime) / 1000;
+                    System.out.println("Tempo gasto: " + d); // Mostra o tempo
+                    break;
+                case 2:
+                    long startTime1;
+                    long endTime1;
+                    startTime1 = System.currentTimeMillis();
+                        
+                    exibirQuestao2(vetor, tamanho);
+
+                    endTime1 = System.currentTimeMillis();
+                    double e = (double)(endTime1 - startTime1) / 1000;
+                    System.out.println("Tempo gasto: " + e); // Mostra o tempo
+                    break;
+                case 3:
+                    long startTime2;
+                    long endTime2;
+                    startTime2 = System.currentTimeMillis();
+                    
+                    exibirQuestao3(vetor, tamanho);
+
+                    endTime2 = System.currentTimeMillis();
+                    double v = (double)(endTime2 - startTime2) / 1000;
+                    System.out.println("Tempo gasto: " + v); // Mostra o tempo
+                    break;
+                case 4:
+                    long startTime3;
+                    long endTime3;
+                    startTime3 = System.currentTimeMillis();
+                    String a = "0001";
+                    String b = "0010";
+                    long c = a.length();
+            
+                    
+                    exibirQuestao4(Long.parseLong(a), Long.parseLong(b), c);
+            
+                    endTime3 = System.currentTimeMillis();
+                    double g = (double)(endTime3 - startTime3) / 1000;
+                    System.out.println("Tempo gasto: " + g); // Mostra o tempo
         
-        //exibirQuestao1(vetor, tamanho);
-        //exibirQuestao2(vetor, tamanho);
-        //exibirQuestao3(vetor, tamanho);
-        String a = "0001";
-        String b = "0010";
-        long c = a.length();
+                    break;
+                case 5:
+                    System.out.println("Finalizando....\n");
+                    terminou = true;  
+                    break;
+                default:
+                    System.out.println("Digite SOMENTE números entre 1 e 5");
+                    break;
 
-        
-        exibirQuestao4(Long.parseLong(a), Long.parseLong(b), c);
+            }
 
-        endTime = System.currentTimeMillis();
-        double v = (double)(endTime - startTime) / 1000;
-        System.out.println("Tempo gasto: " + v); // Mostra o tempo
+        }
+    
 
     }
 
