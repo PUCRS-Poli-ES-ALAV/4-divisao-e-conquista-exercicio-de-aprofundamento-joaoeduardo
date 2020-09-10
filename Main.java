@@ -9,7 +9,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         boolean terminou = false;
         
-        int tamanho = 64;
+        int tamanho = 2048;
         int[] vetor = algoritmo.gerarVetor(tamanho);
         while(!terminou){
             System.out.println("\n------ Escolha uma das questões-------\n");
