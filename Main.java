@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    // static double v;
+    // static double V;
     static Algoritmos algoritmo = new Algoritmos();
 
     public static void main(String[] args) {
